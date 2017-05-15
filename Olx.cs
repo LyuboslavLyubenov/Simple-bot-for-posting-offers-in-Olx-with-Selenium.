@@ -1,8 +1,6 @@
 namespace ConsoleApplication1
 {
-
     using System.Linq;
-    using System.Threading;
 
     using OpenQA.Selenium;
     using OpenQA.Selenium.Support.UI;
@@ -55,7 +53,7 @@ namespace ConsoleApplication1
         /// <param name="product"></param>
         private void SubmitOfferDescription(OlxProduct product)
         {
-            //var localImagePath = this.driver.DownloadPicture(product.PicturesUrls.First());
+            var localImagePath = this.driver.DownloadPicture(product.PicturesUrls.First());
 
             //начална форма
             var titleInputField = this.driver.FindElement(By.Name("data[title]"));
@@ -71,6 +69,7 @@ namespace ConsoleApplication1
             deliveryCostCheckbox.Click();
             stateSelect.SelectByValue(product.State.ToString().ToLower());
             descriptionField.SendKeys(product.Description);
+            firstImageButton.SendKeys(localImagePath);
 
             //firstImageButton.Click();
             

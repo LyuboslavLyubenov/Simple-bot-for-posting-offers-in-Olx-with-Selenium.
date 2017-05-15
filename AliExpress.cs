@@ -41,9 +41,13 @@ namespace ConsoleApplication1
         {
             this.navigation.GoToUrl(url);
 
-            this.driver.ExecuteJavaScript("window.scrollTo(0, document.body.scrollHeight);");//load all images
+            Thread.Sleep(500);
+            this.driver.ExecuteJavaScript("window.scrollTo(0, document.body.scrollHeight / 2);");//load all images
+            Thread.Sleep(500);
+            this.driver.ExecuteJavaScript("window.scrollTo(0, document.body.scrollHeight);");
+            Thread.Sleep(500);
 
-            var productsElements = this.driver.FindElements(By.CssSelector("#gallery-item .item"));
+            var productsElements = this.driver.FindElements(By.ClassName("item"));
             var products = new List<AliExpressProduct>();
 
             foreach (var productWebElement in productsElements)

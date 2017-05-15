@@ -24,7 +24,7 @@
             driver.SwitchTo()
                 .Window(windowHandle);
 
-            return Directory.GetCurrentDirectory() + pictureName;
+            return Directory.GetCurrentDirectory() + '\\' + pictureName;
         }
         
         /// <returns>opened window handle</returns>
