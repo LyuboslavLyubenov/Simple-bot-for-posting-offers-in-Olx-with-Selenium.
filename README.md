@@ -85,3 +85,6 @@ olx.PublishOffer(olxProduct, "гр. София"); //second argument is item's lo
 ```
 
 You are done!
+
+## Warning
+Olx doesnt allow more than 1 offer per category. You must pay for premium account (i think) in order to be able to publish many offers in one category. 
